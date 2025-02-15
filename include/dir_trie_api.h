@@ -1,6 +1,13 @@
 #ifndef DIR_TRIE_API_H
 #define DIR_TRIE_API_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <linux/limits.h>
+
 #define MAX_SUBDIRS 1000
 #define _DEBUG 1
 

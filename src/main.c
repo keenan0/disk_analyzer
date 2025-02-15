@@ -28,7 +28,7 @@ cmd_option options[] = {
     {NULL, NULL        , NULL             }
 };
 
-void print(cmd_data data) {
+void print_cmd(cmd_data data) {
     printf("CMD_DATA INFO:\n");
     printf("path: %s\n", data.path);
     printf("priority: %s\n", data.priority_name);
@@ -90,6 +90,8 @@ void analyze(cmd_data* data) {
 int main() {
     //This is the starting node for our daemon. Any create_node() call will become a descendant of root.
     trie_node* root = create_node("/");
+
+    FILE* fp = fopen("output.txt", "w");
 
     const char command[] = "da --add /home/test/";
     cmd_data parsed_line = parse(options, command);
