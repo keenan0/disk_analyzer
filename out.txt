@@ -1,3 +1,0 @@
-14K	/home/claudiu/projects/da/src
-5.4K	/home/claudiu/projects/da/include
-37K	/home/claudiu/projects/da/

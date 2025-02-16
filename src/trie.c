@@ -157,18 +157,18 @@ void print(trie_node* root, int indent, FILE* fp) {
         print(root->subdirectories[i], indent + 1, fp);
 }
 
-int main() {
-    FILE* fp = fopen("output.txt", "w");
-    if(!fp) return 0;
+// int main() {
+//     FILE* fp = fopen("output.txt", "w");
+//     if(!fp) return 0;
 
-    trie_node* root = create_node("/");    
+//     trie_node* root = create_node("/");    
     
 
-    print(insert_node(root, "/home/claudiu/projects/da", fp), 0, fp);
-    fprintf(fp, "\n");
+//     print(insert_node(root, "/home/claudiu/projects/da", fp), 0, fp);
+//     fprintf(fp, "\n");
     
-    insert_node(root, "/home/claudiu/projects", fp);
-    print(root, 0, fp);
+//     insert_node(root, "/home/claudiu/projects", fp);
+//     print(root, 0, fp);
 
-    insert_node(root, "/home/claudiu/projects/da/src", fp);
-}
+//     insert_node(root, "/home/claudiu/projects/da/src", fp);
+// }

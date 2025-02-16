@@ -4,15 +4,25 @@
 #include <stdlib.h>
 #include <regex.h>
 #include <pthread.h>
+#include <unistd.h>
 
 #define TASK_CREATED_SUCCESS 100
+#define TASK_CREATED_FAILURE 101
 
 #define MAX_TASKS 1000
 
 typedef struct {
     pthread_t ALL_TASKS[MAX_TASKS];
+
     int n_tasks;
 } task_manager;
+
+typedef struct {
+    trie_node* root;
+    cmd_data* data;
+    FILE* fp;
+    int is_finished;
+} tm_create_task_args;
 
 task_manager tm;
 
@@ -37,16 +47,26 @@ void print_cmd(cmd_data data) {
 }
 
 void* tm_create_task(void* args) {
-    
-    
+    tm_create_task_args* arg = (tm_create_task_args*) args;
+    if(_DEBUG) printf("\tCreated thread 'create_task'.\n");
+
+    trie_node* node = insert_node(arg->root, arg->data->path, arg->fp);
+
+    if(_DEBUG) printf("/!\\ Thread ended successfully.\n");
     pthread_exit(NULL);
 }
 
-int da_create_task(cmd_data* data) {
+int da_create_task(cmd_data* data, trie_node* root, FILE* fp) {
     static int next_task_id = 1;
     data->task_id = next_task_id++;
 
-    //pthread_create(&tm.ALL_TASKS[tm.n_tasks], NULL, &tm_create_task, NULL);
+    tm_create_task_args args = {root,data,fp,0};
+    if(pthread_create(&tm.ALL_TASKS[tm.n_tasks], NULL, &tm_create_task, &args) != 0){
+        perror("Could not create thread.\n"); 
+        return TASK_CREATED_FAILURE;
+    }
+    pthread_detach(tm.ALL_TASKS[tm.n_tasks]);
+    tm.n_tasks++;
 
     printf("Created analysis task with ID '%d' for '%s' and priority '%s'.\n", data->task_id, data->path, data->priority_name);
     return TASK_CREATED_SUCCESS;
@@ -70,14 +90,17 @@ int valid_directory_path(const char* path) {
     return (ret == 0);
 }
 
-void analyze(cmd_data* data) {    
+void analyze(cmd_data* data, trie_node* root, FILE* fp) {    
     if(!valid_directory_path(data->path)) {
         perror("Invalid path. Use /dir1/dir2/.../\n"); 
         return;
     }
 
     if(data->mask & ADD_MASK) {
-        da_create_task(data);
+        if(da_create_task(data, root, fp) != TASK_CREATED_SUCCESS) {
+            perror("Could not create task.\n");
+            return;
+        }
 
     } else if(data->mask & REMOVE_MASK) {
         if(data->task_id == -1) { 
@@ -89,12 +112,14 @@ void analyze(cmd_data* data) {
 
 int main() {
     //This is the starting node for our daemon. Any create_node() call will become a descendant of root.
-    trie_node* root = create_node("/");
+    trie_node* root = create_node("");
 
     FILE* fp = fopen("output.txt", "w");
 
-    const char command[] = "da --add /home/test/";
+    const char command[] = "da --add /home/claudiu/projects/da";
     cmd_data parsed_line = parse(options, command);
 
-    analyze(&parsed_line);
+    analyze(&parsed_line, root, fp);
+    sleep(10);
+    print(root, 0, fp);
 }

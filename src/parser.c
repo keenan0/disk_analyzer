@@ -116,7 +116,7 @@ int search_option(cmd_option* options, const char* arg) {
     return index;
 }
 
-int is_power_of_two(int num) {return ((num > 0) && (num & (num - 1) == 0));}
+int is_power_of_two(int num) { return (num > 0) && ((num & (num - 1)) == 0); }
 
 cmd_data parse(cmd_option* options, const char* command) {
     cmd_data result = {
@@ -158,7 +158,7 @@ cmd_data parse(cmd_option* options, const char* command) {
     }
 
     // Check if the result is valid
-    if(is_power_of_two(result.mask) != 0) {
+    if(is_power_of_two(result.mask) == 0) {
         result.mask = 0;
     }
 
