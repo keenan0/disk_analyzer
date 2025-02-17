@@ -1,3 +1,4 @@
+Added /home/claudiu/projects to the trie.
 Added /home/claudiu/projects/da to the trie.
 Added /home/claudiu/projects/da/src to the trie.
 Added /home/claudiu/projects/da/include to the trie.
@@ -21,22 +22,29 @@ Added /home/claudiu/projects/da/.git/objects/4f to the trie.
 Added /home/claudiu/projects/da/.git/objects/6a to the trie.
 Added /home/claudiu/projects/da/.git/objects/88 to the trie.
 Added /home/claudiu/projects/da/.git/objects/86 to the trie.
+Added /home/claudiu/projects/da/.git/objects/aa to the trie.
 Added /home/claudiu/projects/da/.git/objects/6d to the trie.
 Added /home/claudiu/projects/da/.git/objects/82 to the trie.
 Added /home/claudiu/projects/da/.git/objects/e3 to the trie.
 Added /home/claudiu/projects/da/.git/objects/5d to the trie.
+Added /home/claudiu/projects/da/.git/objects/a2 to the trie.
 Added /home/claudiu/projects/da/.git/objects/24 to the trie.
 Added /home/claudiu/projects/da/.git/objects/8b to the trie.
+Added /home/claudiu/projects/da/.git/objects/1e to the trie.
 Added /home/claudiu/projects/da/.git/objects/08 to the trie.
 Added /home/claudiu/projects/da/.git/objects/f5 to the trie.
+Added /home/claudiu/projects/da/.git/objects/32 to the trie.
 Added /home/claudiu/projects/da/.git/objects/84 to the trie.
 Added /home/claudiu/projects/da/.git/objects/b9 to the trie.
 Added /home/claudiu/projects/da/.git/objects/c5 to the trie.
+Added /home/claudiu/projects/da/.git/objects/9e to the trie.
 Added /home/claudiu/projects/da/.git/objects/07 to the trie.
 Added /home/claudiu/projects/da/.git/objects/a4 to the trie.
+Added /home/claudiu/projects/da/.git/objects/c6 to the trie.
 Added /home/claudiu/projects/da/.git/objects/bf to the trie.
 Added /home/claudiu/projects/da/.git/objects/21 to the trie.
 Added /home/claudiu/projects/da/.git/objects/0e to the trie.
+Added /home/claudiu/projects/da/.git/objects/d9 to the trie.
 Added /home/claudiu/projects/da/.git/objects/info to the trie.
 Added /home/claudiu/projects/da/.git/objects/87 to the trie.
 Added /home/claudiu/projects/da/.git/objects/pack to the trie.
@@ -48,55 +56,64 @@ Added /home/claudiu/projects/da/.git/objects/60 to the trie.
 Added /home/claudiu/projects/da/.git/objects/61 to the trie.
 Added /home/claudiu/projects/da/.git/objects/ae to the trie.
 Added /home/claudiu/projects/da/.git/objects/30 to the trie.
+Added /home/claudiu/projects/da/.git/objects/ef to the trie.
 Added /home/claudiu/projects/da/.git/objects/45 to the trie.
 Added /home/claudiu/projects/da/.git/objects/fd to the trie.
 Added /home/claudiu/projects/da/.git/objects/7f to the trie.
 Added /home/claudiu/projects/da/.git/objects/98 to the trie.
 Added /home/claudiu/projects/da/.git/objects/1f to the trie.
 Added /home/claudiu/projects/da/.git/hooks to the trie.
+Added /home/claudiu/projects/testing to the trie.
 0. /  : 0 bytes 0 files 1 directories
     1. /home  : 0 bytes 0 files 1 directories
         2. /claudiu  : 0 bytes 0 files 1 directories
-            3. /projects  : 0 bytes 0 files 1 directories
-                4. /da  : 118078 bytes 75 files 4 directories
-                    5. /src  : 17675 bytes 4 files 0 directories
-                    5. /include  : 2175 bytes 2 files 0 directories
+            3. /projects  : 162505 bytes 88 files 2 directories
+                4. /da  : 145089 bytes 84 files 4 directories
+                    5. /src  : 19921 bytes 4 files 0 directories
+                    5. /include  : 2370 bytes 2 files 0 directories
                     5. /.vscode  : 1571 bytes 2 files 0 directories
-                    5. /.git  : 58492 bytes 62 files 6 directories
+                    5. /.git  : 78382 bytes 71 files 6 directories
                         6. /refs  : 82 bytes 2 files 3 directories
                             7. /heads  : 41 bytes 1 files 0 directories
                             7. /remotes  : 41 bytes 1 files 1 directories
                                 8. /origin  : 41 bytes 1 files 0 directories
                             7. /tags  : 0 bytes 0 files 0 directories
                         6. /branches  : 0 bytes 0 files 0 directories
-                        6. /logs  : 3426 bytes 3 files 1 directories
-                            7. /refs  : 1832 bytes 2 files 2 directories
-                                8. /heads  : 1056 bytes 1 files 0 directories
-                                8. /remotes  : 776 bytes 1 files 1 directories
-                                    9. /origin  : 776 bytes 1 files 0 directories
+                        6. /logs  : 3934 bytes 3 files 1 directories
+                            7. /refs  : 2160 bytes 2 files 2 directories
+                                8. /heads  : 1236 bytes 1 files 0 directories
+                                8. /remotes  : 924 bytes 1 files 1 directories
+                                    9. /origin  : 924 bytes 1 files 0 directories
                         6. /info  : 240 bytes 1 files 0 directories
-                        6. /objects  : 34246 bytes 38 files 37 directories
+                        6. /objects  : 53662 bytes 47 files 45 directories
                             7. /e6  : 15 bytes 1 files 0 directories
                             7. /4f  : 4738 bytes 1 files 0 directories
                             7. /6a  : 244 bytes 1 files 0 directories
                             7. /88  : 3196 bytes 1 files 0 directories
                             7. /86  : 1240 bytes 1 files 0 directories
+                            7. /aa  : 1245 bytes 1 files 0 directories
                             7. /6d  : 31 bytes 1 files 0 directories
                             7. /82  : 1115 bytes 1 files 0 directories
                             7. /e3  : 132 bytes 1 files 0 directories
                             7. /5d  : 1999 bytes 1 files 0 directories
+                            7. /a2  : 147 bytes 1 files 0 directories
                             7. /24  : 267 bytes 1 files 0 directories
                             7. /8b  : 167 bytes 1 files 0 directories
+                            7. /1e  : 13364 bytes 1 files 0 directories
                             7. /08  : 475 bytes 2 files 0 directories
                             7. /f5  : 1086 bytes 1 files 0 directories
+                            7. /32  : 178 bytes 1 files 0 directories
                             7. /84  : 258 bytes 1 files 0 directories
                             7. /b9  : 147 bytes 1 files 0 directories
                             7. /c5  : 346 bytes 1 files 0 directories
+                            7. /9e  : 266 bytes 1 files 0 directories
                             7. /07  : 298 bytes 1 files 0 directories
                             7. /a4  : 3193 bytes 1 files 0 directories
+                            7. /c6  : 248 bytes 1 files 0 directories
                             7. /bf  : 55 bytes 1 files 0 directories
                             7. /21  : 872 bytes 2 files 0 directories
                             7. /0e  : 1998 bytes 1 files 0 directories
+                            7. /d9  : 1638 bytes 1 files 0 directories
                             7. /info  : 0 bytes 0 files 0 directories
                             7. /87  : 68 bytes 1 files 0 directories
                             7. /pack  : 0 bytes 0 files 0 directories
@@ -108,9 +125,11 @@ Added /home/claudiu/projects/da/.git/hooks to the trie.
                             7. /61  : 7153 bytes 1 files 0 directories
                             7. /ae  : 90 bytes 1 files 0 directories
                             7. /30  : 791 bytes 1 files 0 directories
-                            7. /45  : 1629 bytes 1 files 0 directories
+                            7. /ef  : 907 bytes 1 files 0 directories
+                            7. /45  : 3052 bytes 2 files 0 directories
                             7. /fd  : 268 bytes 1 files 0 directories
                             7. /7f  : 233 bytes 1 files 0 directories
                             7. /98  : 154 bytes 1 files 0 directories
                             7. /1f  : 298 bytes 1 files 0 directories
                         6. /hooks  : 18848 bytes 11 files 0 directories
+                4. /testing  : 17416 bytes 4 files 0 directories

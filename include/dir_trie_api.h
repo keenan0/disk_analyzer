@@ -24,12 +24,19 @@ typedef struct trie_node {
     struct trie_node* subdirectories[MAX_SUBDIRS];
 } trie_node;
 
+typedef struct {
+    pthread_t thread;
+    int total_files;
+    int processed_files;
 
+    float progress;
+} da_task;
 
 trie_node* create_node(const char* name);
 int arrcmp(const char** arr, const char* comp_string);
-trie_node* insert_directory_rec(trie_node* root, const char* path, FILE* fp);
-trie_node* insert_node(trie_node* root, const char* path, FILE* fp);
+trie_node* insert_directory_rec(trie_node* root, const char* path, FILE* fp, da_task* task_data);
+trie_node* insert_node(trie_node* root, const char* path, FILE* fp, da_task* task_data);
 void print(trie_node* root, int indent, FILE* fp);
+int get_total_files(const char* path);
 
 #endif

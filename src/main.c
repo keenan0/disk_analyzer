@@ -12,8 +12,7 @@
 #define MAX_TASKS 1000
 
 typedef struct {
-    pthread_t ALL_TASKS[MAX_TASKS];
-
+    da_task ALL_TASKS[MAX_TASKS];
     int n_tasks;
 } task_manager;
 
@@ -21,7 +20,9 @@ typedef struct {
     trie_node* root;
     cmd_data* data;
     FILE* fp;
-    int is_finished;
+    da_task* task_data;
+
+    int task_index;
 } tm_create_task_args;
 
 task_manager tm;
@@ -50,7 +51,9 @@ void* tm_create_task(void* args) {
     tm_create_task_args* arg = (tm_create_task_args*) args;
     if(_DEBUG) printf("\tCreated thread 'create_task'.\n");
 
-    trie_node* node = insert_node(arg->root, arg->data->path, arg->fp);
+    int tf = get_total_files(arg->data->path);;
+    tm.ALL_TASKS[arg->task_index].total_files = tf;
+    insert_node(arg->root, arg->data->path, arg->fp, arg->task_data);
 
     if(_DEBUG) printf("/!\\ Thread ended successfully.\n");
     pthread_exit(NULL);
@@ -60,13 +63,24 @@ int da_create_task(cmd_data* data, trie_node* root, FILE* fp) {
     static int next_task_id = 1;
     data->task_id = next_task_id++;
 
-    tm_create_task_args args = {root,data,fp,0};
-    if(pthread_create(&tm.ALL_TASKS[tm.n_tasks], NULL, &tm_create_task, &args) != 0){
+    // FIX LATER: Add mutex here
+    tm_create_task_args* args = (tm_create_task_args*)(malloc(sizeof(tm_create_task_args)));
+    if(!args) {perror("Malloc failed."); return 0;}
+
+    args->root = root;
+    args->fp = fp;
+    args->data = data;
+    args->task_index = tm.n_tasks;
+    args->task_data = &tm.ALL_TASKS[tm.n_tasks];
+
+    if(pthread_create(&tm.ALL_TASKS[tm.n_tasks].thread, NULL, &tm_create_task, (void*)args) != 0){
         perror("Could not create thread.\n"); 
         return TASK_CREATED_FAILURE;
     }
-    pthread_detach(tm.ALL_TASKS[tm.n_tasks]);
+
+    pthread_detach(tm.ALL_TASKS[tm.n_tasks].thread);
     tm.n_tasks++;
+    // End mutex here
 
     printf("Created analysis task with ID '%d' for '%s' and priority '%s'.\n", data->task_id, data->path, data->priority_name);
     return TASK_CREATED_SUCCESS;
@@ -116,10 +130,12 @@ int main() {
 
     FILE* fp = fopen("output.txt", "w");
 
-    const char command[] = "da --add /home/claudiu/projects/da";
+    const char command[] = "da --add /home/claudiu/projects";
     cmd_data parsed_line = parse(options, command);
 
     analyze(&parsed_line, root, fp);
-    sleep(10);
+    sleep(4);
     print(root, 0, fp);
+
+    printf("%d", get_total_files("/home/claudiu"));
 }
