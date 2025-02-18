@@ -1,6 +1,7 @@
 #include "../include/parser.h"
 #include "../include/dir_trie_api.h"
 #include <stdio.h>
+#include <sched.h>
 #include <stdlib.h>
 #include <regex.h>
 #include <pthread.h>
@@ -73,7 +74,17 @@ int da_create_task(cmd_data* data, trie_node* root, FILE* fp) {
     args->task_index = tm.n_tasks;
     args->task_data = &tm.ALL_TASKS[tm.n_tasks];
 
-    if(pthread_create(&tm.ALL_TASKS[tm.n_tasks].thread, NULL, &tm_create_task, (void*)args) != 0){
+    pthread_attr_t attr;
+    struct sched_param param;
+
+    // Setting the thread's priority
+    pthread_attr_init(&attr);
+    pthread_attr_setschedpolicy(&attr, SCHED_FIFO);
+    param.sched_priority = data->priority + 1; // priorities are between 0 and 2 but the sched_priority only supports values above 0 so i add 1, it works the same
+    pthread_attr_setschedparam(&attr, &param);
+    pthread_attr_setinheritsched(&attr, PTHREAD_EXPLICIT_SCHED);
+
+    if(pthread_create(&tm.ALL_TASKS[tm.n_tasks].thread, &attr, &tm_create_task, (void*)args) != 0){
         perror("Could not create thread.\n"); 
         return TASK_CREATED_FAILURE;
     }

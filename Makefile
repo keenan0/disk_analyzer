@@ -11,11 +11,15 @@ OUT = main
 CFLAGS = -Wall -Wextra -g -pthread
 
 # Default target
-all: $(OUT)
+all: $(OUT) setcap
 
 # Build target
 $(OUT): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(OUT)
+
+# Set capabilities on the binary
+setcap:
+	sudo setcap 'cap_sys_nice=eip' $(OUT)
 
 # Run the program
 run: $(OUT)
