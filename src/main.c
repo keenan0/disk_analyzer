@@ -68,6 +68,7 @@ int da_create_task(cmd_data* data, trie_node* root, FILE* fp) {
     tm_create_task_args* args = (tm_create_task_args*)(malloc(sizeof(tm_create_task_args)));
     if(!args) {perror("Malloc failed."); return 0;}
 
+    tm.ALL_TASKS[tm.n_tasks].id = data->task_id;
     args->root = root;
     args->fp = fp;
     args->data = data;
@@ -141,12 +142,15 @@ int main() {
 
     FILE* fp = fopen("output.txt", "w");
 
-    const char command[] = "da --add /home/claudiu/projects";
+    const char command[] = "da --add /home/claudiu/projects/da -p 0";
     cmd_data parsed_line = parse(options, command);
 
-    analyze(&parsed_line, root, fp);
-    sleep(4);
-    print(root, 0, fp);
+    const char command2[] = "da --add /home/claudiu/projects -p 1";
+    cmd_data parsed_line2 = parse(options, command2);
 
-    printf("%d", get_total_files("/home/claudiu"));
+    analyze(&parsed_line, root, fp);
+    analyze(&parsed_line2, root, fp);
+    sleep(10);
+
+    print(root, 0, fp);
 }

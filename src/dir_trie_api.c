@@ -103,9 +103,12 @@ trie_node* insert_directory_rec(trie_node* root, const char* path, FILE* fp, da_
 
             // Updating the task's progress
             task_data->processed_files++;
+            if(found != -1) {
+                if(_DEBUG) fprintf(fp,"\t\t\tCached %s with %d directories.\n", cached->dir_name, get_total_files(full_path));
+                task_data->processed_files += get_total_files(full_path);
+            }
             task_data->progress = (int)(((float)task_data->processed_files / (float)task_data->total_files) * 100);
-            if(_DEBUG) printf("Task is %d%% done.\n", (int)task_data->progress);
-
+            if(_DEBUG) fprintf(fp, "\tTask %d is %d%% done.\n", task_data->id, (int)task_data->progress);
         } else if(S_ISREG(file_metadata.st_mode)) {
             // The found entry is a file
             root->n_files++;
@@ -117,7 +120,7 @@ trie_node* insert_directory_rec(trie_node* root, const char* path, FILE* fp, da_
 
     root->is_analysed = 1;
     if(_DEBUG) 
-        printf("\t\t\tFinished analysing '%s'.\n", root->dir_name);
+        fprintf(fp, "\t\t\tFinished analysing '%s'.\n", root->dir_name);
     
     return root;
 }

@@ -25,6 +25,8 @@ typedef struct trie_node {
 } trie_node;
 
 typedef struct {
+    int id;
+    
     pthread_t thread;
     int total_files;
     int processed_files;

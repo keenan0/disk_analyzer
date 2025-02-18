@@ -1,109 +1,539 @@
 Added /home/claudiu/projects to the trie.
 Added /home/claudiu/projects/da to the trie.
+Added /home/claudiu/projects/da to the trie.
 Added /home/claudiu/projects/da/src to the trie.
+Added /home/claudiu/projects/da/src to the trie.
+Added /home/claudiu/projects/da/src/temp to the trie.
+Added /home/claudiu/projects/da/src/temp to the trie.
+Added /home/claudiu/projects/da/src/temp/ggt to the trie.
+			Finished analysing 'ggt'.
+	Task 1 is 1% done.
+			Finished analysing 'temp'.
+	Task 1 is 2% done.
+			Finished analysing 'src'.
+	Task 1 is 3% done.
+Added /home/claudiu/projects/da/src/temp/ggt to the trie.
+			Finished analysing 'ggt'.
+	Task 2 is 1% done.
+			Finished analysing 'temp'.
+	Task 2 is 2% done.
 Added /home/claudiu/projects/da/include to the trie.
+			Finished analysing 'src'.
+	Task 2 is 3% done.
+			Finished analysing 'include'.
+	Task 1 is 4% done.
+Added /home/claudiu/projects/da/include to the trie.
+			Finished analysing 'include'.
+	Task 2 is 4% done.
 Added /home/claudiu/projects/da/.vscode to the trie.
+Added /home/claudiu/projects/da/.vscode to the trie.
+			Finished analysing '.vscode'.
+	Task 1 is 6% done.
+			Finished analysing '.vscode'.
+	Task 2 is 6% done.
+Added /home/claudiu/projects/da/.git to the trie.
 Added /home/claudiu/projects/da/.git to the trie.
 Added /home/claudiu/projects/da/.git/refs to the trie.
+Added /home/claudiu/projects/da/.git/refs to the trie.
 Added /home/claudiu/projects/da/.git/refs/heads to the trie.
+			Finished analysing 'heads'.
+	Task 2 is 7% done.
+Added /home/claudiu/projects/da/.git/refs/heads to the trie.
+			Finished analysing 'heads'.
+	Task 1 is 7% done.
+Added /home/claudiu/projects/da/.git/refs/remotes to the trie.
 Added /home/claudiu/projects/da/.git/refs/remotes to the trie.
 Added /home/claudiu/projects/da/.git/refs/remotes/origin to the trie.
+			Finished analysing 'origin'.
+	Task 2 is 8% done.
+			Finished analysing 'remotes'.
+	Task 2 is 9% done.
 Added /home/claudiu/projects/da/.git/refs/tags to the trie.
+			Finished analysing 'tags'.
+	Task 2 is 10% done.
+			Finished analysing 'refs'.
+	Task 2 is 12% done.
+Added /home/claudiu/projects/da/.git/refs/remotes/origin to the trie.
+			Finished analysing 'origin'.
+	Task 1 is 8% done.
+			Finished analysing 'remotes'.
+	Task 1 is 9% done.
 Added /home/claudiu/projects/da/.git/branches to the trie.
+			Finished analysing 'branches'.
+	Task 2 is 13% done.
 Added /home/claudiu/projects/da/.git/logs to the trie.
 Added /home/claudiu/projects/da/.git/logs/refs to the trie.
 Added /home/claudiu/projects/da/.git/logs/refs/heads to the trie.
+			Finished analysing 'heads'.
+	Task 2 is 14% done.
 Added /home/claudiu/projects/da/.git/logs/refs/remotes to the trie.
+Added /home/claudiu/projects/da/.git/refs/tags to the trie.
+			Finished analysing 'tags'.
+	Task 1 is 11% done.
+			Finished analysing 'refs'.
+	Task 1 is 12% done.
 Added /home/claudiu/projects/da/.git/logs/refs/remotes/origin to the trie.
+			Finished analysing 'origin'.
+	Task 2 is 15% done.
+			Finished analysing 'remotes'.
+	Task 2 is 16% done.
+			Finished analysing 'refs'.
+	Task 2 is 18% done.
+			Finished analysing 'logs'.
+	Task 2 is 19% done.
+Added /home/claudiu/projects/da/.git/branches to the trie.
+			Finished analysing 'branches'.
+	Task 1 is 13% done.
 Added /home/claudiu/projects/da/.git/info to the trie.
+			Finished analysing 'info'.
+	Task 2 is 20% done.
+Added /home/claudiu/projects/da/.git/logs to the trie.
 Added /home/claudiu/projects/da/.git/objects to the trie.
 Added /home/claudiu/projects/da/.git/objects/e6 to the trie.
+			Finished analysing 'e6'.
+	Task 2 is 21% done.
+Added /home/claudiu/projects/da/.git/objects/5a to the trie.
+			Finished analysing '5a'.
+	Task 2 is 22% done.
 Added /home/claudiu/projects/da/.git/objects/4f to the trie.
+Added /home/claudiu/projects/da/.git/logs/refs to the trie.
+			Finished analysing '4f'.
+	Task 2 is 24% done.
 Added /home/claudiu/projects/da/.git/objects/6a to the trie.
+			Finished analysing '6a'.
+	Task 2 is 25% done.
+Added /home/claudiu/projects/da/.git/logs/refs/heads to the trie.
+			Finished analysing 'heads'.
+	Task 1 is 14% done.
 Added /home/claudiu/projects/da/.git/objects/88 to the trie.
+			Finished analysing '88'.
+	Task 2 is 26% done.
+Added /home/claudiu/projects/da/.git/logs/refs/remotes to the trie.
 Added /home/claudiu/projects/da/.git/objects/86 to the trie.
+			Finished analysing '86'.
+	Task 2 is 27% done.
+Added /home/claudiu/projects/da/.git/logs/refs/remotes/origin to the trie.
+			Finished analysing 'origin'.
+	Task 1 is 16% done.
+			Finished analysing 'remotes'.
+	Task 1 is 17% done.
+			Finished analysing 'refs'.
+	Task 1 is 18% done.
+			Finished analysing 'logs'.
+	Task 1 is 19% done.
+Added /home/claudiu/projects/da/.git/objects/72 to the trie.
+			Finished analysing '72'.
+	Task 2 is 28% done.
+Added /home/claudiu/projects/da/.git/info to the trie.
+			Finished analysing 'info'.
+	Task 1 is 20% done.
 Added /home/claudiu/projects/da/.git/objects/aa to the trie.
+			Finished analysing 'aa'.
+	Task 2 is 30% done.
+Added /home/claudiu/projects/da/.git/objects to the trie.
 Added /home/claudiu/projects/da/.git/objects/6d to the trie.
+			Finished analysing '6d'.
+	Task 2 is 31% done.
+Added /home/claudiu/projects/da/.git/objects/9a to the trie.
+			Finished analysing '9a'.
+	Task 2 is 32% done.
+Added /home/claudiu/projects/da/.git/objects/e6 to the trie.
+			Finished analysing 'e6'.
+	Task 1 is 22% done.
 Added /home/claudiu/projects/da/.git/objects/fe to the trie.
+			Finished analysing 'fe'.
+	Task 2 is 33% done.
+Added /home/claudiu/projects/da/.git/objects/5a to the trie.
+			Finished analysing '5a'.
+	Task 1 is 23% done.
 Added /home/claudiu/projects/da/.git/objects/82 to the trie.
+			Finished analysing '82'.
+	Task 2 is 34% done.
+Added /home/claudiu/projects/da/.git/objects/4f to the trie.
+			Finished analysing '4f'.
+	Task 1 is 24% done.
+Added /home/claudiu/projects/da/.git/objects/17 to the trie.
+			Finished analysing '17'.
+	Task 2 is 36% done.
+Added /home/claudiu/projects/da/.git/objects/6a to the trie.
+			Finished analysing '6a'.
+	Task 1 is 25% done.
 Added /home/claudiu/projects/da/.git/objects/e3 to the trie.
+			Finished analysing 'e3'.
+	Task 2 is 37% done.
+Added /home/claudiu/projects/da/.git/objects/88 to the trie.
+			Finished analysing '88'.
+	Task 1 is 27% done.
 Added /home/claudiu/projects/da/.git/objects/09 to the trie.
+			Finished analysing '09'.
+	Task 2 is 38% done.
+Added /home/claudiu/projects/da/.git/objects/86 to the trie.
+			Finished analysing '86'.
+	Task 1 is 28% done.
 Added /home/claudiu/projects/da/.git/objects/5d to the trie.
+			Finished analysing '5d'.
+	Task 2 is 39% done.
+Added /home/claudiu/projects/da/.git/objects/72 to the trie.
+			Finished analysing '72'.
+	Task 1 is 29% done.
 Added /home/claudiu/projects/da/.git/objects/a2 to the trie.
+			Finished analysing 'a2'.
+	Task 2 is 40% done.
+Added /home/claudiu/projects/da/.git/objects/aa to the trie.
+			Finished analysing 'aa'.
+	Task 1 is 30% done.
 Added /home/claudiu/projects/da/.git/objects/24 to the trie.
+Added /home/claudiu/projects/da/.git/objects/6d to the trie.
+			Finished analysing '24'.
+	Task 2 is 42% done.
+			Finished analysing '6d'.
+	Task 1 is 32% done.
 Added /home/claudiu/projects/da/.git/objects/8b to the trie.
+			Finished analysing '8b'.
+	Task 2 is 43% done.
+Added /home/claudiu/projects/da/.git/objects/9a to the trie.
+			Finished analysing '9a'.
+	Task 1 is 33% done.
 Added /home/claudiu/projects/da/.git/objects/1e to the trie.
+			Finished analysing '1e'.
+	Task 2 is 44% done.
 Added /home/claudiu/projects/da/.git/objects/08 to the trie.
+			Finished analysing '08'.
+	Task 2 is 45% done.
 Added /home/claudiu/projects/da/.git/objects/f5 to the trie.
+			Finished analysing 'f5'.
+	Task 2 is 46% done.
 Added /home/claudiu/projects/da/.git/objects/15 to the trie.
+			Finished analysing '15'.
+	Task 2 is 48% done.
+Added /home/claudiu/projects/da/.git/objects/fe to the trie.
+			Finished analysing 'fe'.
+	Task 1 is 34% done.
 Added /home/claudiu/projects/da/.git/objects/32 to the trie.
+			Finished analysing '32'.
+	Task 2 is 49% done.
+Added /home/claudiu/projects/da/.git/objects/82 to the trie.
+			Finished analysing '82'.
+	Task 1 is 35% done.
 Added /home/claudiu/projects/da/.git/objects/84 to the trie.
+			Finished analysing '84'.
+	Task 2 is 50% done.
+Added /home/claudiu/projects/da/.git/objects/17 to the trie.
+			Finished analysing '17'.
+	Task 1 is 37% done.
 Added /home/claudiu/projects/da/.git/objects/b9 to the trie.
+			Finished analysing 'b9'.
+	Task 2 is 51% done.
+Added /home/claudiu/projects/da/.git/objects/e3 to the trie.
+			Finished analysing 'e3'.
+	Task 1 is 38% done.
 Added /home/claudiu/projects/da/.git/objects/c5 to the trie.
+Added /home/claudiu/projects/da/.git/objects/09 to the trie.
+			Finished analysing 'c5'.
+	Task 2 is 53% done.
+			Finished analysing '09'.
+	Task 1 is 39% done.
+Added /home/claudiu/projects/da/.git/objects/5d to the trie.
+			Finished analysing '5d'.
+	Task 1 is 40% done.
 Added /home/claudiu/projects/da/.git/objects/9e to the trie.
+			Finished analysing '9e'.
+	Task 2 is 54% done.
+Added /home/claudiu/projects/da/.git/objects/a2 to the trie.
+			Finished analysing 'a2'.
+	Task 1 is 41% done.
 Added /home/claudiu/projects/da/.git/objects/07 to the trie.
+			Finished analysing '07'.
+	Task 2 is 55% done.
+Added /home/claudiu/projects/da/.git/objects/24 to the trie.
+			Finished analysing '24'.
+	Task 1 is 43% done.
+Added /home/claudiu/projects/da/.git/objects/28 to the trie.
+Added /home/claudiu/projects/da/.git/objects/8b to the trie.
+			Finished analysing '28'.
+	Task 2 is 56% done.
+			Finished analysing '8b'.
+	Task 1 is 44% done.
 Added /home/claudiu/projects/da/.git/objects/a4 to the trie.
+			Finished analysing 'a4'.
+	Task 2 is 57% done.
+Added /home/claudiu/projects/da/.git/objects/1e to the trie.
 Added /home/claudiu/projects/da/.git/objects/c6 to the trie.
+			Finished analysing '1e'.
+	Task 1 is 45% done.
+			Finished analysing 'c6'.
+	Task 2 is 59% done.
+Added /home/claudiu/projects/da/.git/objects/08 to the trie.
+			Finished analysing '08'.
+	Task 1 is 46% done.
+Added /home/claudiu/projects/da/.git/objects/f5 to the trie.
+			Finished analysing 'f5'.
+	Task 1 is 48% done.
 Added /home/claudiu/projects/da/.git/objects/bf to the trie.
+			Finished analysing 'bf'.
+	Task 2 is 60% done.
+Added /home/claudiu/projects/da/.git/objects/15 to the trie.
+			Finished analysing '15'.
+	Task 1 is 49% done.
 Added /home/claudiu/projects/da/.git/objects/21 to the trie.
+			Finished analysing '21'.
+	Task 2 is 61% done.
 Added /home/claudiu/projects/da/.git/objects/0e to the trie.
+			Finished analysing '0e'.
+	Task 2 is 62% done.
+Added /home/claudiu/projects/da/.git/objects/32 to the trie.
+			Finished analysing '32'.
+	Task 1 is 50% done.
+Added /home/claudiu/projects/da/.git/objects/a3 to the trie.
+			Finished analysing 'a3'.
+	Task 2 is 63% done.
+Added /home/claudiu/projects/da/.git/objects/84 to the trie.
+			Finished analysing '84'.
+	Task 1 is 51% done.
 Added /home/claudiu/projects/da/.git/objects/d9 to the trie.
+			Finished analysing 'd9'.
+	Task 2 is 65% done.
+Added /home/claudiu/projects/da/.git/objects/b9 to the trie.
+			Finished analysing 'b9'.
+	Task 1 is 53% done.
 Added /home/claudiu/projects/da/.git/objects/info to the trie.
+			Finished analysing 'info'.
+	Task 2 is 66% done.
+Added /home/claudiu/projects/da/.git/objects/c5 to the trie.
+			Finished analysing 'c5'.
+	Task 1 is 54% done.
 Added /home/claudiu/projects/da/.git/objects/7c to the trie.
+			Finished analysing '7c'.
+	Task 2 is 67% done.
+Added /home/claudiu/projects/da/.git/objects/9e to the trie.
+			Finished analysing '9e'.
+	Task 1 is 55% done.
 Added /home/claudiu/projects/da/.git/objects/87 to the trie.
+			Finished analysing '87'.
+	Task 2 is 68% done.
+Added /home/claudiu/projects/da/.git/objects/07 to the trie.
+			Finished analysing '07'.
+	Task 1 is 56% done.
 Added /home/claudiu/projects/da/.git/objects/pack to the trie.
+			Finished analysing 'pack'.
+	Task 2 is 69% done.
+Added /home/claudiu/projects/da/.git/objects/28 to the trie.
+			Finished analysing '28'.
+	Task 1 is 58% done.
+Added /home/claudiu/projects/da/.git/objects/a4 to the trie.
 Added /home/claudiu/projects/da/.git/objects/2e to the trie.
+			Finished analysing 'a4'.
+	Task 1 is 59% done.
+			Finished analysing '2e'.
+	Task 2 is 71% done.
+Added /home/claudiu/projects/da/.git/objects/c6 to the trie.
+			Finished analysing 'c6'.
+	Task 1 is 60% done.
 Added /home/claudiu/projects/da/.git/objects/53 to the trie.
+Added /home/claudiu/projects/da/.git/objects/bf to the trie.
+			Finished analysing '53'.
+	Task 2 is 72% done.
+			Finished analysing 'bf'.
+	Task 1 is 61% done.
+Added /home/claudiu/projects/da/.git/objects/1b to the trie.
+			Finished analysing '1b'.
+	Task 2 is 73% done.
+Added /home/claudiu/projects/da/.git/objects/21 to the trie.
+			Finished analysing '21'.
+	Task 1 is 62% done.
 Added /home/claudiu/projects/da/.git/objects/db to the trie.
+Added /home/claudiu/projects/da/.git/objects/0e to the trie.
+			Finished analysing 'db'.
+	Task 2 is 74% done.
+			Finished analysing '0e'.
+	Task 1 is 64% done.
 Added /home/claudiu/projects/da/.git/objects/39 to the trie.
+			Finished analysing '39'.
+	Task 2 is 75% done.
+Added /home/claudiu/projects/da/.git/objects/a3 to the trie.
+			Finished analysing 'a3'.
+	Task 1 is 65% done.
+Added /home/claudiu/projects/da/.git/objects/d9 to the trie.
+			Finished analysing 'd9'.
+	Task 1 is 66% done.
 Added /home/claudiu/projects/da/.git/objects/cf to the trie.
+			Finished analysing 'cf'.
+	Task 2 is 77% done.
+Added /home/claudiu/projects/da/.git/objects/info to the trie.
+			Finished analysing 'info'.
+	Task 1 is 67% done.
 Added /home/claudiu/projects/da/.git/objects/60 to the trie.
+			Finished analysing '60'.
+	Task 2 is 78% done.
+Added /home/claudiu/projects/da/.git/objects/7c to the trie.
+			Finished analysing '7c'.
+	Task 1 is 69% done.
+Added /home/claudiu/projects/da/.git/objects/34 to the trie.
+Added /home/claudiu/projects/da/.git/objects/87 to the trie.
+			Finished analysing '34'.
+	Task 2 is 79% done.
+			Finished analysing '87'.
+	Task 1 is 70% done.
 Added /home/claudiu/projects/da/.git/objects/61 to the trie.
+			Finished analysing '61'.
+	Task 2 is 80% done.
+Added /home/claudiu/projects/da/.git/objects/pack to the trie.
+			Finished analysing 'pack'.
+	Task 1 is 71% done.
 Added /home/claudiu/projects/da/.git/objects/ae to the trie.
+			Finished analysing 'ae'.
+	Task 2 is 81% done.
+Added /home/claudiu/projects/da/.git/objects/2e to the trie.
+			Finished analysing '2e'.
+	Task 1 is 72% done.
+Added /home/claudiu/projects/da/.git/objects/71 to the trie.
+			Finished analysing '71'.
+	Task 2 is 83% done.
+Added /home/claudiu/projects/da/.git/objects/53 to the trie.
+			Finished analysing '53'.
+	Task 1 is 74% done.
 Added /home/claudiu/projects/da/.git/objects/30 to the trie.
+			Finished analysing '30'.
+	Task 2 is 84% done.
+Added /home/claudiu/projects/da/.git/objects/1b to the trie.
+			Finished analysing '1b'.
+	Task 1 is 75% done.
 Added /home/claudiu/projects/da/.git/objects/ef to the trie.
+Added /home/claudiu/projects/da/.git/objects/db to the trie.
+			Finished analysing 'ef'.
+	Task 2 is 85% done.
+			Finished analysing 'db'.
+	Task 1 is 76% done.
 Added /home/claudiu/projects/da/.git/objects/45 to the trie.
+Added /home/claudiu/projects/da/.git/objects/39 to the trie.
+			Finished analysing '45'.
+	Task 2 is 86% done.
+			Finished analysing '39'.
+	Task 1 is 77% done.
 Added /home/claudiu/projects/da/.git/objects/fd to the trie.
+			Finished analysing 'fd'.
+	Task 2 is 87% done.
 Added /home/claudiu/projects/da/.git/objects/7f to the trie.
+			Finished analysing '7f'.
+	Task 2 is 89% done.
 Added /home/claudiu/projects/da/.git/objects/98 to the trie.
+			Finished analysing '98'.
+	Task 2 is 90% done.
+Added /home/claudiu/projects/da/.git/objects/cf to the trie.
+			Finished analysing 'cf'.
+	Task 1 is 79% done.
+Added /home/claudiu/projects/da/.git/objects/02 to the trie.
+			Finished analysing '02'.
+	Task 2 is 91% done.
+Added /home/claudiu/projects/da/.git/objects/60 to the trie.
+			Finished analysing '60'.
+	Task 1 is 80% done.
 Added /home/claudiu/projects/da/.git/objects/6f to the trie.
+			Finished analysing '6f'.
+	Task 2 is 92% done.
+Added /home/claudiu/projects/da/.git/objects/34 to the trie.
+			Finished analysing '34'.
+	Task 1 is 81% done.
 Added /home/claudiu/projects/da/.git/objects/1f to the trie.
+Added /home/claudiu/projects/da/.git/objects/61 to the trie.
+			Finished analysing '1f'.
+	Task 2 is 93% done.
+			Finished analysing '61'.
+	Task 1 is 82% done.
+			Finished analysing 'objects'.
+	Task 2 is 95% done.
+Added /home/claudiu/projects/da/.git/objects/ae to the trie.
+			Finished analysing 'ae'.
+	Task 1 is 83% done.
 Added /home/claudiu/projects/da/.git/hooks to the trie.
+Added /home/claudiu/projects/da/.git/objects/71 to the trie.
+			Finished analysing '71'.
+	Task 1 is 85% done.
+			Finished analysing 'hooks'.
+	Task 2 is 96% done.
+			Finished analysing '.git'.
+	Task 2 is 97% done.
+			Finished analysing 'da'.
+	Task 2 is 98% done.
+Added /home/claudiu/projects/da/.git/objects/30 to the trie.
+			Finished analysing '30'.
+	Task 1 is 86% done.
 Added /home/claudiu/projects/testing to the trie.
+			Finished analysing 'testing'.
+	Task 2 is 100% done.
+			Finished analysing 'projects'.
+Added /home/claudiu/projects/da/.git/objects/ef to the trie.
+			Finished analysing 'ef'.
+	Task 1 is 87% done.
+Added /home/claudiu/projects/da/.git/objects/45 to the trie.
+			Finished analysing '45'.
+	Task 1 is 88% done.
+Added /home/claudiu/projects/da/.git/objects/fd to the trie.
+			Finished analysing 'fd'.
+	Task 1 is 90% done.
+Added /home/claudiu/projects/da/.git/objects/7f to the trie.
+			Finished analysing '7f'.
+	Task 1 is 91% done.
+Added /home/claudiu/projects/da/.git/objects/98 to the trie.
+			Finished analysing '98'.
+	Task 1 is 92% done.
+Added /home/claudiu/projects/da/.git/objects/02 to the trie.
+			Finished analysing '02'.
+	Task 1 is 93% done.
+Added /home/claudiu/projects/da/.git/objects/6f to the trie.
+			Finished analysing '6f'.
+	Task 1 is 95% done.
+Added /home/claudiu/projects/da/.git/objects/1f to the trie.
+			Finished analysing '1f'.
+	Task 1 is 96% done.
+			Finished analysing 'objects'.
+	Task 1 is 97% done.
+Added /home/claudiu/projects/da/.git/hooks to the trie.
+			Finished analysing 'hooks'.
+	Task 1 is 98% done.
+			Finished analysing '.git'.
+	Task 1 is 100% done.
+			Finished analysing 'projects'.
 0. /  : 0 bytes 0 files 1 directories
     1. /home  : 0 bytes 0 files 1 directories
-        2. /claudiu  : 0 bytes 0 files 1 directories
-            3. /projects  : 185978 bytes 98 files 2 directories
-                4. /da  : 168562 bytes 94 files 4 directories
-                    5. /src  : 20392 bytes 4 files 0 directories
-                    5. /include  : 2370 bytes 2 files 0 directories
+        2. /claudiu  : 0 bytes 0 files 2 directories
+            3. /projects  : 209574 bytes 110 files 2 directories
+                4. /da  : 192158 bytes 106 files 4 directories
+                    5. /src  : 20833 bytes 4 files 1 directories
+                        6. /temp  : 0 bytes 0 files 1 directories
+                            7. /ggt  : 0 bytes 0 files 0 directories
+                    5. /include  : 2387 bytes 2 files 0 directories
                     5. /.vscode  : 1571 bytes 2 files 0 directories
-                    5. /.git  : 100704 bytes 81 files 6 directories
+                    5. /.git  : 122339 bytes 93 files 6 directories
                         6. /refs  : 82 bytes 2 files 3 directories
                             7. /heads  : 41 bytes 1 files 0 directories
                             7. /remotes  : 41 bytes 1 files 1 directories
                                 8. /origin  : 41 bytes 1 files 0 directories
                             7. /tags  : 0 bytes 0 files 0 directories
                         6. /branches  : 0 bytes 0 files 0 directories
-                        6. /logs  : 4422 bytes 3 files 1 directories
-                            7. /refs  : 2478 bytes 2 files 2 directories
-                                8. /heads  : 1406 bytes 1 files 0 directories
-                                8. /remotes  : 1072 bytes 1 files 1 directories
-                                    9. /origin  : 1072 bytes 1 files 0 directories
+                        6. /logs  : 5434 bytes 3 files 1 directories
+                            7. /refs  : 3134 bytes 2 files 2 directories
+                                8. /heads  : 1762 bytes 1 files 0 directories
+                                8. /remotes  : 1372 bytes 1 files 1 directories
+                                    9. /origin  : 1372 bytes 1 files 0 directories
                         6. /info  : 240 bytes 1 files 0 directories
-                        6. /objects  : 75506 bytes 57 files 51 directories
+                        6. /objects  : 96205 bytes 69 files 61 directories
                             7. /e6  : 15 bytes 1 files 0 directories
+                            7. /5a  : 248 bytes 1 files 0 directories
                             7. /4f  : 4738 bytes 1 files 0 directories
                             7. /6a  : 244 bytes 1 files 0 directories
                             7. /88  : 4895 bytes 2 files 0 directories
                             7. /86  : 1240 bytes 1 files 0 directories
+                            7. /72  : 14633 bytes 1 files 0 directories
                             7. /aa  : 1245 bytes 1 files 0 directories
                             7. /6d  : 31 bytes 1 files 0 directories
+                            7. /9a  : 715 bytes 1 files 0 directories
                             7. /fe  : 2265 bytes 1 files 0 directories
                             7. /82  : 1115 bytes 1 files 0 directories
+                            7. /17  : 248 bytes 1 files 0 directories
                             7. /e3  : 132 bytes 1 files 0 directories
                             7. /09  : 14171 bytes 1 files 0 directories
-                            7. /5d  : 1999 bytes 1 files 0 directories
+                            7. /5d  : 2234 bytes 2 files 0 directories
                             7. /a2  : 147 bytes 1 files 0 directories
                             7. /24  : 267 bytes 1 files 0 directories
                             7. /8b  : 167 bytes 1 files 0 directories
@@ -117,11 +547,13 @@ Added /home/claudiu/projects/testing to the trie.
                             7. /c5  : 346 bytes 1 files 0 directories
                             7. /9e  : 266 bytes 1 files 0 directories
                             7. /07  : 298 bytes 1 files 0 directories
+                            7. /28  : 1113 bytes 1 files 0 directories
                             7. /a4  : 3193 bytes 1 files 0 directories
                             7. /c6  : 248 bytes 1 files 0 directories
-                            7. /bf  : 55 bytes 1 files 0 directories
+                            7. /bf  : 1857 bytes 2 files 0 directories
                             7. /21  : 872 bytes 2 files 0 directories
                             7. /0e  : 1998 bytes 1 files 0 directories
+                            7. /a3  : 311 bytes 1 files 0 directories
                             7. /d9  : 1638 bytes 1 files 0 directories
                             7. /info  : 0 bytes 0 files 0 directories
                             7. /7c  : 171 bytes 1 files 0 directories
@@ -129,19 +561,105 @@ Added /home/claudiu/projects/testing to the trie.
                             7. /pack  : 0 bytes 0 files 0 directories
                             7. /2e  : 2306 bytes 3 files 0 directories
                             7. /53  : 298 bytes 1 files 0 directories
+                            7. /1b  : 823 bytes 1 files 0 directories
                             7. /db  : 146 bytes 1 files 0 directories
                             7. /39  : 177 bytes 2 files 0 directories
                             7. /cf  : 147 bytes 1 files 0 directories
                             7. /60  : 231 bytes 1 files 0 directories
+                            7. /34  : 148 bytes 1 files 0 directories
                             7. /61  : 7153 bytes 1 files 0 directories
                             7. /ae  : 90 bytes 1 files 0 directories
+                            7. /71  : 175 bytes 1 files 0 directories
                             7. /30  : 791 bytes 1 files 0 directories
                             7. /ef  : 907 bytes 1 files 0 directories
                             7. /45  : 3052 bytes 2 files 0 directories
                             7. /fd  : 268 bytes 1 files 0 directories
                             7. /7f  : 233 bytes 1 files 0 directories
                             7. /98  : 154 bytes 1 files 0 directories
+                            7. /02  : 248 bytes 1 files 0 directories
                             7. /6f  : 248 bytes 1 files 0 directories
                             7. /1f  : 298 bytes 1 files 0 directories
                         6. /hooks  : 18848 bytes 11 files 0 directories
                 4. /testing  : 17416 bytes 4 files 0 directories
+            3. /projects  : 192158 bytes 106 files 4 directories
+                4. /src  : 20833 bytes 4 files 1 directories
+                    5. /temp  : 0 bytes 0 files 1 directories
+                        6. /ggt  : 0 bytes 0 files 0 directories
+                4. /include  : 2387 bytes 2 files 0 directories
+                4. /.vscode  : 1571 bytes 2 files 0 directories
+                4. /.git  : 122339 bytes 93 files 6 directories
+                    5. /refs  : 82 bytes 2 files 3 directories
+                        6. /heads  : 41 bytes 1 files 0 directories
+                        6. /remotes  : 41 bytes 1 files 1 directories
+                            7. /origin  : 41 bytes 1 files 0 directories
+                        6. /tags  : 0 bytes 0 files 0 directories
+                    5. /branches  : 0 bytes 0 files 0 directories
+                    5. /logs  : 5434 bytes 3 files 1 directories
+                        6. /refs  : 3134 bytes 2 files 2 directories
+                            7. /heads  : 1762 bytes 1 files 0 directories
+                            7. /remotes  : 1372 bytes 1 files 1 directories
+                                8. /origin  : 1372 bytes 1 files 0 directories
+                    5. /info  : 240 bytes 1 files 0 directories
+                    5. /objects  : 96205 bytes 69 files 61 directories
+                        6. /e6  : 15 bytes 1 files 0 directories
+                        6. /5a  : 248 bytes 1 files 0 directories
+                        6. /4f  : 4738 bytes 1 files 0 directories
+                        6. /6a  : 244 bytes 1 files 0 directories
+                        6. /88  : 4895 bytes 2 files 0 directories
+                        6. /86  : 1240 bytes 1 files 0 directories
+                        6. /72  : 14633 bytes 1 files 0 directories
+                        6. /aa  : 1245 bytes 1 files 0 directories
+                        6. /6d  : 31 bytes 1 files 0 directories
+                        6. /9a  : 715 bytes 1 files 0 directories
+                        6. /fe  : 2265 bytes 1 files 0 directories
+                        6. /82  : 1115 bytes 1 files 0 directories
+                        6. /17  : 248 bytes 1 files 0 directories
+                        6. /e3  : 132 bytes 1 files 0 directories
+                        6. /09  : 14171 bytes 1 files 0 directories
+                        6. /5d  : 2234 bytes 2 files 0 directories
+                        6. /a2  : 147 bytes 1 files 0 directories
+                        6. /24  : 267 bytes 1 files 0 directories
+                        6. /8b  : 167 bytes 1 files 0 directories
+                        6. /1e  : 13364 bytes 1 files 0 directories
+                        6. /08  : 2060 bytes 3 files 0 directories
+                        6. /f5  : 1086 bytes 1 files 0 directories
+                        6. /15  : 90 bytes 1 files 0 directories
+                        6. /32  : 178 bytes 1 files 0 directories
+                        6. /84  : 258 bytes 1 files 0 directories
+                        6. /b9  : 147 bytes 1 files 0 directories
+                        6. /c5  : 346 bytes 1 files 0 directories
+                        6. /9e  : 266 bytes 1 files 0 directories
+                        6. /07  : 298 bytes 1 files 0 directories
+                        6. /28  : 1113 bytes 1 files 0 directories
+                        6. /a4  : 3193 bytes 1 files 0 directories
+                        6. /c6  : 248 bytes 1 files 0 directories
+                        6. /bf  : 1857 bytes 2 files 0 directories
+                        6. /21  : 872 bytes 2 files 0 directories
+                        6. /0e  : 1998 bytes 1 files 0 directories
+                        6. /a3  : 311 bytes 1 files 0 directories
+                        6. /d9  : 1638 bytes 1 files 0 directories
+                        6. /info  : 0 bytes 0 files 0 directories
+                        6. /7c  : 171 bytes 1 files 0 directories
+                        6. /87  : 68 bytes 1 files 0 directories
+                        6. /pack  : 0 bytes 0 files 0 directories
+                        6. /2e  : 2306 bytes 3 files 0 directories
+                        6. /53  : 298 bytes 1 files 0 directories
+                        6. /1b  : 823 bytes 1 files 0 directories
+                        6. /db  : 146 bytes 1 files 0 directories
+                        6. /39  : 177 bytes 2 files 0 directories
+                        6. /cf  : 147 bytes 1 files 0 directories
+                        6. /60  : 231 bytes 1 files 0 directories
+                        6. /34  : 148 bytes 1 files 0 directories
+                        6. /61  : 7153 bytes 1 files 0 directories
+                        6. /ae  : 90 bytes 1 files 0 directories
+                        6. /71  : 175 bytes 1 files 0 directories
+                        6. /30  : 791 bytes 1 files 0 directories
+                        6. /ef  : 907 bytes 1 files 0 directories
+                        6. /45  : 3052 bytes 2 files 0 directories
+                        6. /fd  : 268 bytes 1 files 0 directories
+                        6. /7f  : 233 bytes 1 files 0 directories
+                        6. /98  : 154 bytes 1 files 0 directories
+                        6. /02  : 248 bytes 1 files 0 directories
+                        6. /6f  : 248 bytes 1 files 0 directories
+                        6. /1f  : 298 bytes 1 files 0 directories
+                    5. /hooks  : 18848 bytes 11 files 0 directories
