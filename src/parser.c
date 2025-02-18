@@ -14,6 +14,8 @@ void cmd_set_priority(cmd_data* data, const char* arg) {
     if(arg == NULL) return;
     int num_priority = atoi(arg);
 
+    data->priority = num_priority;
+
     if(num_priority < 0 || num_priority > 3) return;
     switch (num_priority) {
     case 0:

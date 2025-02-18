@@ -26,8 +26,17 @@ typedef struct trie_node {
 
 typedef struct {
     int id;
-    
+
     pthread_t thread;
+    pthread_cond_t cond;
+    pthread_mutex_t lock;
+    int paused;
+    int is_deleted;
+
+    char* status;
+    char* path;
+    int priority;
+
     int total_files;
     int processed_files;
 
@@ -39,6 +48,8 @@ int arrcmp(const char** arr, const char* comp_string);
 trie_node* insert_directory_rec(trie_node* root, const char* path, FILE* fp, da_task* task_data);
 trie_node* insert_node(trie_node* root, const char* path, FILE* fp, da_task* task_data);
 void print(trie_node* root, int indent, FILE* fp);
+
+int get_total_dirs(const char* path);
 int get_total_files(const char* path);
 
 #endif

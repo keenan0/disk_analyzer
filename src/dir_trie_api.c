@@ -48,6 +48,23 @@ trie_node* insert_directory_rec(trie_node* root, const char* path, FILE* fp, da_
             and we want to now compute /home/user then the node from the trie will have all the necessary information in there and will return  
     */
 
+    pthread_mutex_lock(&task_data->lock);
+
+    if(task_data->is_deleted) {
+        pthread_mutex_unlock(&task_data->lock);
+        if(_DEBUG) 
+            printf("Removed analysis task with ID '%d', status '%s' for '%s'’\n", task_data->id, task_data->status, path);
+        pthread_exit(NULL);
+    }
+
+    while (task_data->paused) {
+        if(_DEBUG) 
+            printf("Task with ID '%d' is paused at %d%%.\n", task_data->id, task_data->progress);
+        pthread_cond_wait(&task_data->cond, &task_data->lock);
+    }
+
+    pthread_mutex_unlock(&task_data->lock);
+
     if(root == NULL) return NULL;
     if(root->is_analysed == 1) return root;
     
@@ -104,10 +121,13 @@ trie_node* insert_directory_rec(trie_node* root, const char* path, FILE* fp, da_
             // Updating the task's progress
             task_data->processed_files++;
             if(found != -1) {
-                if(_DEBUG) fprintf(fp,"\t\t\tCached %s with %d directories.\n", cached->dir_name, get_total_files(full_path));
-                task_data->processed_files += get_total_files(full_path);
+                if(_DEBUG) fprintf(fp,"\t\t\tCached %s with %d directories.\n", cached->dir_name, get_total_dirs(full_path));
+                task_data->processed_files += get_total_dirs(full_path);
             }
             task_data->progress = (int)(((float)task_data->processed_files / (float)task_data->total_files) * 100);
+            
+            if(task_data->progress > 99) {task_data->status = "done";}
+
             if(_DEBUG) fprintf(fp, "\tTask %d is %d%% done.\n", task_data->id, (int)task_data->progress);
         } else if(S_ISREG(file_metadata.st_mode)) {
             // The found entry is a file
@@ -189,7 +209,7 @@ void print(trie_node* root, int indent, FILE* fp) {
         print(root->subdirectories[i], indent + 1, fp);
 }
 
-int get_total_files(const char* path) {
+int get_total_dirs(const char* path) {
     int total_directories = 0;
     
     DIR* dir = opendir(path);
@@ -214,10 +234,46 @@ int get_total_files(const char* path) {
 
         if(S_ISDIR(file_metadata.st_mode)) {
             total_directories += 1;
-            total_directories += get_total_files(full_path);
+            total_directories += get_total_dirs(full_path);
         }
     }
 
     closedir(dir);
     return total_directories;
+}
+
+int get_total_files(const char* path) {
+    int total_files = 0;
+    
+    DIR* dir = opendir(path);
+    if(dir == NULL) {perror("Error opening directory.\n"); return -1;}
+
+    char full_path[PATH_MAX];
+
+    struct dirent* entry;
+    while(entry = readdir(dir)) {
+        if(strcmp(".", entry->d_name) == 0 
+        || strcmp("..", entry->d_name) == 0) {
+                continue;
+        }
+
+        snprintf(full_path, sizeof(full_path), "%s/%s", path, entry->d_name);
+
+        struct stat file_metadata;
+        if(stat(full_path, &file_metadata) != 0) {
+            perror("Error getting file or directory info.\n");
+            return -1;
+        }
+
+        if(S_ISDIR(file_metadata.st_mode)) {
+            total_files += get_total_files(full_path);
+        }
+
+        if(S_ISREG(file_metadata.st_mode)) {
+            total_files += 1;
+        }
+    }
+
+    closedir(dir);
+    return total_files;
 }
