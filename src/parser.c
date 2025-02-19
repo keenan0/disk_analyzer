@@ -78,7 +78,16 @@ void cmd_info(cmd_data* data, const char* id) {
     data->task_id = task_id;
 }
 
-void cmd_print(cmd_data* data, const char* arg) { data->mask |= PRINT_MASK; }
+void cmd_print(cmd_data* data, const char* id) { 
+    data->mask |= PRINT_MASK; 
+
+    if(id == NULL) {return;}
+
+    int task_id = atoi(id);
+    if(!task_id) { perror("failed atoi convert"); return;}
+
+    data->task_id = task_id;
+}
  
 char** split(const char* line, const char* delim) {
     char** tokens = (char**)malloc(MAX_TOKENS * sizeof(char*));

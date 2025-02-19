@@ -108,7 +108,8 @@ int da_create_task(cmd_data* data, trie_node* root, FILE* fp) {
 }
 
 int valid_directory_path(const char* path) {
-    char* pattern = "^\\/([a-zA-Z0-9._-]+\\/)*[a-zA-Z0-9_-]+\\/?$";
+    //char* pattern = "^\\/([a-zA-Z0-9._-]+\\/)*[a-zA-Z0-9_-]+\\/?$";
+    char* pattern = "^\\/([a-zA-Z0-9._-]+\\/)*([a-zA-Z0-9._-]+|\\.[a-zA-Z0-9_-]+)\\/?$";
 
     regex_t reg;
     int ret;
@@ -163,6 +164,100 @@ char* format_details(const char* path) {
     snprintf(temp, 4096, "%d files, %d dirs", get_total_files(path), get_total_dirs(path));
 
     return temp;
+}
+
+trie_node* find_node(trie_node* root, const char* path) {
+    const char* delim = "/";
+    char* temp_path = strdup(path);
+
+    //printf("%s %s | %s\n", root->dir_name, path, temp_path);
+
+    trie_node* currentNode = root;
+
+    char* token = strtok(temp_path, delim);
+    while(token != NULL) {
+        //printf("%s\n", token);
+        int found = 0;
+        for(int i = 0; i < currentNode->n_directories; ++i) {
+            //printf("Found subdir '%s' dirs: %d\n", currentNode->subdirectories[i]->dir_name, currentNode->n_directories);
+
+            if(strcmp(token, currentNode->subdirectories[i]->dir_name) == 0) {
+                currentNode = currentNode->subdirectories[i];
+                found = 1;
+                break;
+            }
+        }
+
+        if(!found) {
+            //printf("Could not find %s\n", token);
+            free(temp_path);
+            return NULL;
+        }
+
+        token = strtok(NULL, delim);
+    }
+
+    //printf("returning;\n");
+    free(temp_path);
+    return currentNode;
+}
+
+char* format_hashtag(int n_hashtags) {
+    char* temp = (char*)malloc(n_hashtags + 1);
+
+    for(int i = 0; i < n_hashtags; ++i)
+        temp[i] = '#';
+    temp[n_hashtags] = 0;
+
+    return temp;
+}
+
+char* format_bytes(long long bytes) {
+    const long long KB = 1024;
+    const long long MB = KB * 1024;
+    const long long GB = MB * 1024;
+    
+    char* temp = (char*)malloc(4096);
+
+    if(bytes < KB) {
+        snprintf(temp, 4096, "%d  B", bytes);
+    }
+
+    if(KB <= bytes && bytes < MB) {
+        snprintf(temp, 4096, "%.2f KB", (float)bytes / KB);
+    }
+
+    if(MB <= bytes && bytes <= GB) {
+        snprintf(temp, 4096, "%.2f MB", (float)bytes / MB);
+    }
+
+    if(GB <= bytes) {
+        snprintf(temp, 4096, "%.2f GB", (float)bytes / GB);
+    }
+
+    return temp;
+}
+
+void print_node_terminal(trie_node* root, const char* path, const char* full_path, int root_size, int is_in_root) {    
+    float percentage = (float)root->size / root_size * 100;
+    // A hashtag represents 2% 
+    int hashtags = (int)(percentage / 2);
+
+    printf("|-%-30s %5.1f%% %10s %-50s\n",
+        (is_in_root ? full_path : path),
+        percentage,
+        format_bytes(root->size),
+        format_hashtag(hashtags)
+    ); 
+
+    for(int i = 0; i < root->n_directories; ++i) {
+        if(is_in_root) printf("|\n");
+        
+        char new_path[PATH_MAX];
+        snprintf(new_path, PATH_MAX, "%s/%s", path, root->subdirectories[i]->dir_name);
+        
+        print_node_terminal(root->subdirectories[i], new_path, full_path, root_size, 0);
+    }
 }
 
 void analyze(cmd_data* data, trie_node* root, FILE* fp) {    
@@ -275,7 +370,20 @@ void analyze(cmd_data* data, trie_node* root, FILE* fp) {
             return;
         }
 
+        printf("%-30s %8s %10s %-50s\n", 
+            "Path",
+            "Usage",
+            "Size",
+            "Amount"
+        );
 
+        trie_node* path_node = find_node(root, task->path);
+        if(path_node == NULL) {
+            perror("Given path is not valid.\n");
+            return;
+        }
+
+        print_node_terminal(path_node, "", task->path, path_node->size, 1);
     }
 }
 
@@ -285,20 +393,19 @@ int main() {
 
     FILE* fp = fopen("output.txt", "w");
 
-    const char command[] = "da --add /home/claudiu/projects/da -p 2";
+    const char command[] = "da --add /home/claudiu/projects/da/.git -p 2";
     cmd_data parsed_line = parse(options, command);
 
-    const char command2[] = "da -a /home/claudiu -p 0";
+    const char command2[] = "da -a /home/claudiu/projects/da -p 0";
     cmd_data parsed_line2 = parse(options, command2);
     
-    const char command3[] = "da -P 2";
+    const char command3[] = "da -P 1";
     cmd_data parsed_line3 = parse(options, command3);
 
     analyze(&parsed_line, root, fp);
-    analyze(&parsed_line2, root, fp);
-    usleep(100000);
+    //analyze(&parsed_line2, root, fp);
+    usleep(1000000);
     analyze(&parsed_line3, root, fp);
-    sleep(1);
 
     print(root, 0, fp);
 }

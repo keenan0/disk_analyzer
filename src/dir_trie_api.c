@@ -181,6 +181,7 @@ trie_node* insert_node(trie_node* root, const char* path, FILE* fp, da_task* tas
             currentNode = new_node;
         } else if(currentNode->is_analysed == 1) {
             printf("\tPath is already being analysed.\n");
+            //free(temp_path);
             return currentNode;
         }
 
