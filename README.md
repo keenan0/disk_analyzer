@@ -34,7 +34,11 @@ The daemon must analyze the occupied space recursively for each contained direct
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`-l, --list list all analysis tasks, with their ID and the corresponding root` 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`-p, --print <id> print analysis report for those tasks that are "done"`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`-P, --print <id> print analysis report for those tasks that are "done"`
 
 # How to run
-Run the Makefile using make, then type alias da=./client. After this you can run either **./client [OPTION] ...** or **da [OPTION] ...**
+Run the Makefile using: **make**, 
+
+**alias da=./client**
+
+After this you can run either **./client [OPTION] ...** or **da [OPTION] ...**
