@@ -65,7 +65,7 @@ void cmd_remove(cmd_data* data, const char* id) {
     if(!task_id) { perror("failed atoi convert"); return; }
 
     data->task_id = task_id;
-};
+}
 
 void cmd_info(cmd_data* data, const char* id) {
     data->mask |= INFO_MASK;
@@ -143,13 +143,15 @@ cmd_data parse(cmd_option* options, const char* command) {
     void (*currentHandle)() = NULL;
     int index = 0;
 
-    if(strcmp(args[index++], DAEMON_NAME) != 0) {exit(EXIT_FAILURE);}
+    // This is replaced with the alias da = ./client -> if(strcmp(args[index++], DAEMON_NAME) != 0) {exit(EXIT_FAILURE);}
 
     while(args[index] != NULL) {
         char* currentCommand = args[index];
 
         cmd_option found_option = options[search_option(options, currentCommand)];
-        printf("searching for %s, found %d: %s\n", currentCommand, search_option(options, currentCommand), found_option.long_cmd);
+        
+        //printf("searching for %s, found %d: %s\n", currentCommand, search_option(options, currentCommand), found_option.long_cmd);
+        
         if(found_option.handler != NULL) {
             if(currentHandle != NULL) 
                 currentHandle(&result, NULL);

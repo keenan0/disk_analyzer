@@ -59,7 +59,7 @@ trie_node* insert_directory_rec(trie_node* root, const char* path, FILE* fp, da_
 
     while (task_data->paused) {
         if(_DEBUG) 
-            printf("Task with ID '%d' is paused at %d%%.\n", task_data->id, task_data->progress);
+            printf("Task with ID '%d' is paused at %f%%.\n", task_data->id, task_data->progress);
         pthread_cond_wait(&task_data->cond, &task_data->lock);
     }
 
@@ -83,7 +83,7 @@ trie_node* insert_directory_rec(trie_node* root, const char* path, FILE* fp, da_
     DIR* dir = opendir(path);
     if(dir == NULL) {perror("Error opening directory.\n"); return NULL;}
 
-    fprintf(fp, "Added %s to the trie.\n", path);
+    //fprintf(fp, "Task %d: Added %s to the trie.\n", task_data->id, path);
 
     struct dirent* entry;
     char full_path[PATH_MAX];
@@ -128,7 +128,7 @@ trie_node* insert_directory_rec(trie_node* root, const char* path, FILE* fp, da_
             
             if(task_data->progress > 99) {task_data->status = "done";}
 
-            if(_DEBUG) fprintf(fp, "\tTask %d is %d%% done.\n", task_data->id, (int)task_data->progress);
+            //if(_DEBUG) fprintf(fp, "\tTask %d is %d%% done.\n", task_data->id, (int)task_data->progress);
         } else if(S_ISREG(file_metadata.st_mode)) {
             // The found entry is a file
             root->n_files++;
@@ -139,8 +139,7 @@ trie_node* insert_directory_rec(trie_node* root, const char* path, FILE* fp, da_
     closedir(dir);
 
     root->is_analysed = 1;
-    if(_DEBUG) 
-        fprintf(fp, "\t\t\tFinished analysing '%s'.\n", root->dir_name);
+    //if(_DEBUG) fprintf(fp, "\t\t\tFinished analysing '%s'.\n", root->dir_name);
     
     return root;
 }
@@ -277,4 +276,33 @@ int get_total_files(const char* path) {
 
     closedir(dir);
     return total_files;
+}
+
+trie_node* find_node(trie_node* root, const char* path) {
+    const char* delim = "/";
+    char* temp_path = strdup(path);
+
+    trie_node* currentNode = root;
+
+    char* token = strtok(temp_path, delim);
+    while(token != NULL) {
+        int found = 0;
+        for(int i = 0; i < currentNode->n_directories; ++i) {
+            if(strcmp(token, currentNode->subdirectories[i]->dir_name) == 0) {
+                currentNode = currentNode->subdirectories[i];
+                found = 1;
+                break;
+            }
+        }
+
+        if(!found) {
+            free(temp_path);
+            return NULL;
+        }
+
+        token = strtok(NULL, delim);
+    }
+
+    free(temp_path);
+    return currentNode;
 }

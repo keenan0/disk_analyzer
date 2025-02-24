@@ -1,30 +1,39 @@
 # Compiler
 CC = gcc
 
-# Source files
-SRC = src/main.c src/parser.c src/dir_trie_api.c
+# Compiler Flags
+CFLAGS = -Wall -Wextra -pedantic -g -pthread
 
-# Output binary
-OUT = main
+# Directories
+SRC_DIR = src
+INC_DIR = include
 
-# Compilation flags (optional, add -Wall -Wextra -g for debugging)
-CFLAGS = -Wall -Wextra -g -pthread
+# Source Files
+DAEMON_SRC = $(SRC_DIR)/daemon.c $(SRC_DIR)/utils.c $(SRC_DIR)/dir_trie_api.c $(SRC_DIR)/parser.c
+CLIENT_SRC = $(SRC_DIR)/client.c $(SRC_DIR)/utils.c $(SRC_DIR)/dir_trie_api.c $(SRC_DIR)/parser.c
 
-# Default target
-all: $(OUT) setcap
+# Header Files
+INCLUDES = -I$(INC_DIR)
 
-# Build target
-$(OUT): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(OUT)
+# Output Binaries
+DAEMON_BIN = daemon
+CLIENT_BIN = client
 
-# Set capabilities on the binary
-setcap:
-	sudo setcap 'cap_sys_nice=eip' $(OUT)
+# Default Target
+all: $(DAEMON_BIN) $(CLIENT_BIN) run-daemon
 
-# Run the program
-run: $(OUT)
-	./$(OUT)
+# Compile Daemon
+$(DAEMON_BIN): $(DAEMON_SRC)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $^
 
-# Clean compiled files
+# Compile Client
+$(CLIENT_BIN): $(CLIENT_SRC)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $^
+
+# Run Daemon in Background with sudo
+run-daemon: $(DAEMON_BIN)
+	sudo ./$(DAEMON_BIN) &
+
+# Clean Compiled Binaries
 clean:
-	rm -f $(OUT)
+	rm -f $(DAEMON_BIN) $(CLIENT_BIN)

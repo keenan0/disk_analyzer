@@ -7,9 +7,10 @@
 #include <dirent.h>
 #include <sys/stat.h>
 #include <linux/limits.h>
+#include <pthread.h>
 
 #define MAX_SUBDIRS 1000
-#define _DEBUG 1
+#define _DEBUG 0
 
 struct trie_node;
 typedef struct trie_node {
@@ -47,6 +48,7 @@ trie_node* create_node(const char* name);
 int arrcmp(const char** arr, const char* comp_string);
 trie_node* insert_directory_rec(trie_node* root, const char* path, FILE* fp, da_task* task_data);
 trie_node* insert_node(trie_node* root, const char* path, FILE* fp, da_task* task_data);
+trie_node* find_node(trie_node* root, const char* path);
 void print(trie_node* root, int indent, FILE* fp);
 
 int get_total_dirs(const char* path);
