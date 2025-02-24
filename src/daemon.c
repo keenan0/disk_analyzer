@@ -21,6 +21,7 @@
 #define TASK_CREATED_FAILURE 101
 
 #define MAX_TASKS 1000
+#define MAX_BUFFER_SIZE 128 * 4096
 
 typedef struct {
     da_task ALL_TASKS[MAX_TASKS];
@@ -125,7 +126,7 @@ void print_node_terminal(trie_node* root, const char* path, const char* full_pat
     // A hashtag represents 2% 
     int hashtags = (int)(percentage / 2);
 
-    snprintf(buffer + strlen(buffer), 4096 - strlen(buffer), "|-%-30s %5.1f%% %10s %-50s\n",
+    snprintf(buffer + strlen(buffer), MAX_BUFFER_SIZE - strlen(buffer), "|-%-30s %5.1f%% %10s %-50s\n",
         (is_in_root ? full_path : path),
         percentage,
         format_bytes(root->size),
@@ -133,7 +134,7 @@ void print_node_terminal(trie_node* root, const char* path, const char* full_pat
     ); 
 
     for(int i = 0; i < root->n_directories; ++i) {
-        if(is_in_root) snprintf(buffer + strlen(buffer), 4096 - strlen(buffer), "|\n");
+        if(is_in_root) snprintf(buffer + strlen(buffer), MAX_BUFFER_SIZE - strlen(buffer), "|\n");
         
         char new_path[PATH_MAX];
         snprintf(new_path, PATH_MAX, "%s/%s", path, root->subdirectories[i]->dir_name);
@@ -143,7 +144,7 @@ void print_node_terminal(trie_node* root, const char* path, const char* full_pat
 }
 
 char* analyze(cmd_data* data, trie_node* root, FILE* fp) {    
-    char* buffer = (char*)malloc(4096 * sizeof(char));
+    char* buffer = (char*)malloc(MAX_BUFFER_SIZE * sizeof(char));
 
     if(data->mask & ADD_MASK) {
         if(!valid_directory_path(data->path)) {
@@ -245,7 +246,7 @@ char* analyze(cmd_data* data, trie_node* root, FILE* fp) {
             return "The task found is not done yet.\n";
         }
 
-        snprintf(buffer, 4096, "%-30s %8s %10s %-50s\n", 
+        snprintf(buffer, MAX_BUFFER_SIZE, "%-30s %8s %10s %-50s\n", 
             "Path",
             "Usage",
             "Size",
@@ -294,11 +295,27 @@ void daemonize() {
 }
 
 void handle_command(int client_fd, cmd_data* cmd) {
-    char* response = (char*)malloc(4096 * sizeof(char));
+    char* response = analyze(cmd, root, fp);
+    if (!response) {
+        response = "Error: Could not process request.\n";
+    }
 
-    response = analyze(cmd, root, fp);
-    
-    write(client_fd, response, strlen(response));
+    size_t total_size = strlen(response);
+    size_t bytes_sent = 0;
+
+    while (bytes_sent < total_size) {
+        size_t chunk_size = (total_size - bytes_sent > 4096) ? 4096 : (total_size - bytes_sent);
+        ssize_t sent = write(client_fd, response + bytes_sent, chunk_size);
+
+        if (sent < 0) {
+            syslog(LOG_ERR, "Error sending response to client: %s", strerror(errno));
+            break; 
+        }
+
+        bytes_sent += sent;
+    }
+
+    //if(response != NULL) free(response);
 }
 
 void start_server() {

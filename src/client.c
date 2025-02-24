@@ -53,14 +53,18 @@ void send_command(int client_socket, cmd_data* command) {
 }
 
 void receive_response(int client_socket) {
-    char response[4096];
-    int bytes = recv(client_socket, response, sizeof(response) - 1, 0);
-    if (bytes > 0) {
-        response[bytes] = '\0';
-        printf("%s\n", response);
-    } else {
-        printf("No response from daemon.\n");
+    char buffer[4096];  // Buffer for receiving data
+    ssize_t bytes_received;
+
+    while ((bytes_received = read(client_socket, buffer, sizeof(buffer) - 1)) > 0) {
+        buffer[bytes_received] = '\0';  // Null-terminate the received data
+        printf("%s", buffer);           // Print the chunk
     }
+
+    if (bytes_received < 0) {
+        perror("Error reading from server");
+    }
+
     close(client_socket);
 }
 
