@@ -30,6 +30,9 @@ The daemon must analyze the occupied space recursively for each contained direct
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`-r, --remove <id> remove the analysis with the given <id>`
 
+# How to run
+Run the Makefile using make, then type alias da=./client. After this you can run either **./client [OPTION] ...** or **da [OPTION] ...**
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`-i, --info <id> print status about the analysis with <id> (pending, progress, done)`
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`-l, --list list all analysis tasks, with their ID and the corresponding root` 
