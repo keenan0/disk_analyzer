@@ -148,7 +148,7 @@ char* analyze(cmd_data* data, trie_node* root, FILE* fp) {
 
     if(data->mask & ADD_MASK) {
         if(!valid_directory_path(data->path)) {
-            return "Invalid path. Use /dir1/dir2/.../\n";
+            return "Invalid path.\n";
         }
 
         if(da_create_task(data, root, fp, buffer) != TASK_CREATED_SUCCESS) {
@@ -315,7 +315,9 @@ void handle_command(int client_fd, cmd_data* cmd) {
         bytes_sent += sent;
     }
 
-    //if(response != NULL) free(response);
+    if(response != NULL) {
+        syslog(LOG_INFO,  "Freed %d bytes.", strlen(response));
+    }
 }
 
 void start_server() {

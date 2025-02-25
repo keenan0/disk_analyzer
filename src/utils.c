@@ -2,6 +2,7 @@
 #include <regex.h>
 #include <string.h>
 #include <stdio.h>
+#include <dirent.h>
 #include <stdlib.h>
 
 int valid_directory_path(const char* path) {
@@ -20,7 +21,11 @@ int valid_directory_path(const char* path) {
     ret = regexec(&reg, path, 0, NULL, 0);
     regfree(&reg);
 
-    return (ret == 0);
+    DIR* dir = opendir(path);
+    if (!dir) { return 0; }
+
+    closedir(dir);
+    return 1;
 }
 
 const char* format_priority(int priority) {
