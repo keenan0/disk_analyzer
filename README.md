@@ -37,8 +37,15 @@ The daemon must analyze the occupied space recursively for each contained direct
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`-P, --print <id> print analysis report for those tasks that are "done"`
 
 # How to run
-Run the Makefile using: **make**, 
+Run the Makefile using: 
+
+**make**, 
 
 **alias da=./client**
 
 After this you can run either **./client [OPTION] ...** or **da [OPTION] ...**
+
+**You can kill the process using:**
+
+ps aux | grep ./daemon
+sudo kill pid_found_in_the_previous_command
